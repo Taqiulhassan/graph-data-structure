@@ -12,7 +12,9 @@
 //   return false;
 // }
 
-// // Big 0(n^2)
+// // Big 0(n^2) Time complexity
+//O(1) - space complexity
+
 // console.log(containCommonItem(array1, array2))
 
 
@@ -50,6 +52,15 @@ function containsCommonItem2(arr1, arr2) {
   return false
  }
 
- //O(a + b) Time Complexity
+ //O(a + b) Time Complexity.
+// O(a) spacew complexity.
 
- console.log(containsCommonItem2(array1, array2))
+//  console.log(containsCommonItem2(array1, array2))
+
+function containsCommonItem3(arr1, arr2) {
+  return arr1.some(item => arr2.includes(item))
+}
+
+console.log(containsCommonItem3(array1, array2))
+
+//O()
