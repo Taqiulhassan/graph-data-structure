@@ -11,7 +11,17 @@ class HashTable {
     }
     return hash;
   }
+
+  set(key, value) {
+    let address = this._hash(key);
+
+    if (!this.data[address]) {
+      this.data[address] = [];
+    }
+    this.data[address].push([key, value]);
+    console.log(this.data);
+  }
 }
 
 const myHashTable = new HashTable(50);
-console.log(myHashTable._hash('grapes'));
+console.log(myHashTable.set('grapes', 10000));
