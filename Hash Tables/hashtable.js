@@ -19,9 +19,10 @@ class HashTable {
       this.data[address] = [];
     }
     this.data[address].push([key, value]);
-    console.log(this.data);
+    return this.data;
   }
 }
 
 const myHashTable = new HashTable(50);
 console.log(myHashTable.set('grapes', 10000));
+console.log(myHashTable.set('apples', 54));
