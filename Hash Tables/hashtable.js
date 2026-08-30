@@ -63,6 +63,7 @@ class HashTable {
     }
 
     return keysArray;
+    //Big O(1)
   }
 }
 
