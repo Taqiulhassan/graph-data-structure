@@ -38,6 +38,32 @@ class HashTable {
     return undefined;
     //Big O(1)
   }
+  0;
+
+  keys() {
+    const keysArray = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keysArray.push(this.data[i][0][0]);
+      }
+    }
+    return keysArray;
+  }
+
+  // Teacher wala for...in method:
+  keys() {
+    const keysArray = [];
+
+    for (let index in this.data) {
+      // Sirf un indices par chalega jahan data hai
+      const bucket = this.data[index];
+      for (let i = 0; i < bucket.length; i++) {
+        keysArray.push(bucket[i][0]);
+      }
+    }
+
+    return keysArray;
+  }
 }
 
 const myHashTable = new HashTable(50);
