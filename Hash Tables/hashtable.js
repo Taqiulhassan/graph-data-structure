@@ -11,6 +11,7 @@ class HashTable {
     }
     return hash;
   }
+  //Big O(1)
 
   set(key, value) {
     let address = this._hash(key);
@@ -21,6 +22,7 @@ class HashTable {
     this.data[address].push([key, value]);
     return this.data;
   }
+  //Big O(1)
 
   get(key) {
     let address = this._hash(key);
@@ -34,10 +36,15 @@ class HashTable {
       }
     }
     return undefined;
+    //Big O(1)
   }
 }
 
 const myHashTable = new HashTable(50);
 console.log(myHashTable.set('grapes', 10000));
 console.log(myHashTable.set('apples', 54));
+console.log(myHashTable.set('oranges', 12));
 console.log(myHashTable.get('grapes'));
+console.log(myHashTable.keys());
+
+//The time complexity of this program is Big O(1)......
