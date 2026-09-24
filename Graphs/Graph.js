@@ -13,7 +13,17 @@ class Graph {
     this.adjacentList[node2].push(node1);
   }
   //This showConnection part i soptionla...This is not imp .....
-  showConnections() {}
+  showConnections() {
+    const allNodes = Object.keys(this.adjacentList);
+    for (let node of allNodes) {
+      let connections = this.adjacentList[node];
+      let connectionString = '';
+      for (let connection of connections) {
+        connectionString += connection + ' ';
+      }
+      console.log(node + '-->' + connectionString);
+    }
+  }
 }
 
 const myGraph = new Graph();
@@ -34,3 +44,11 @@ myGraph.addEdge('0', '2');
 myGraph.addEdge('6', '5');
 
 console.log(myGraph);
+console.log(myGraph.showConnections());
+//Answer:
+// 0-->1 2
+// 1-->3 2 0
+// 2-->4 1 0
+// 3-->3 2 5
+// 5-->4 6
+// 6-->5
